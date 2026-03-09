@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // Configure axios base url
-  axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'https://jobsphere-backend-81jn.onrender.com';
+  axios.defaults.baseURL = (import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : 'https://jobsphere-backend-81jn.onrender.com/api');
 
   useEffect(() => {
     if (token) {
